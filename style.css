@@ -1,0 +1,238 @@
+ /* From uiverse.io by @satyamchaudharydev */
+/* === removing default button style ===*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.button {
+    margin: 0;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  /* button styling */
+  .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #7F00FF;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+  }
+  /* this is the text, when you hover on button */
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+  }
+  /* hover */
+  .button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+  body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: url(bg.png);
+      background-size: cover;
+  }
+
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .GradientBorder {
+    position: relative;
+  }
+  .GradientBorder::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #7F00FF;
+    z-index: -1;
+  }
+  .GradientBorder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:#7F00FF;
+    z-index: -2;
+    filter: blur(8px);
+  }
+  
+  #container-1 {
+    width: 800px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .GradientBorder-1 {
+    width: 700px;
+    height: 420px;
+    position: relative;
+  }
+  .GradientBorder-1::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #7F00FF;
+    z-index: -1;
+  }
+  .GradientBorder-1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:#7F00FF;
+    z-index: -2;
+    filter: blur(8px);
+  }
+
+  .glow-on-hover {
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg,#7F00FF, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.correct{
+
+  border: 1px solid green!important;
+}
+.incorrect{
+  border: 1px solid red !important;
+}
+.disable{
+pointer-events: none;
+}
+.next_button {
+  border-radius: 4px;
+  background-color: #7F00FF;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.next_button{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.next_button:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 9px;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.next_button:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+.next_button:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.time_line{
+  width: 100%;
+  position: absolute;
+  height: 2px;
+  background-color: #7F00FF;
+  bottom: -10px;
+}

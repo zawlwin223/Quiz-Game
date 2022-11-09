@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<style>
+
+</style>
+<body class="bg-black">
+
+    
+              <!-- RULES CARD -->
+  <div id="container" class="rules_card position-absolute d-none ">
+    <div class="border-0 rounded-0 GradientBorder d-flex flex-column" style="width: 30rem;z-index: 5;">
+      <div class="bg-black text-light p-3">
+        <div>
+          <h5 class="ms-3 mb-3">Some Rules of this Quiz</h5>
+        </div>
+        <div>
+          <ol>
+            <li class="mb-2">You will have only <span class="fw-bold" style="color: #7F00FF;">15 seconds</span>  per each question.</li>
+            <li class="mb-2">Once you select your answer, it can't be undone.</li>
+            <li class="mb-2">You can't select any option once time goes off.</li>
+            <li class="mb-2">You can't exit from the Quiz while you're playing.</li>
+            <li class="mb-2">You'll get points on the basis of your correct answers.</li>
+          </ol>
+        </div>
+        <div class="text-end pe-3">
+          <button class="glow-on-hover me-2 exit_button" type="button ">Exit Quiz</button>
+          <button class="glow-on-hover continue_button" type="button ">Continue</button>
+        </div>
+      </div>
+   
+
+    </div>
+    
+  </div>
+ <!-- Quiz -->
+ <div id="container-1" class="quiz_card position-absolute "   style="z-index: 5;">
+  <div  class="GradientBorder-1 d-flex flex-column text-light bg-black "  >
+    <div class="d-flex justify-content-between align-items-center py-2 position-relative">
+      <div class="fw-bold ms-3">Quiz Application </div>
+        <div class="badge p-2 me-3" style="background-color: #7F00FF;color:black;">
+          <span>Time Left <span class="badge text-bg-secondary w-25 ms-2 text-dark timing">15</span></span>
+        </div>
+        <div class="time_line"></div>
+    
+      </div>
+    <div class="p-3">
+      <h5 class="fw-bold my-4 question">1. What is the biggest tower in the world ?</h5>
+        <ul class="text-decoration-none list-unstyled my-3 option_list">
+     
+        </ul>
+    </div>
+    <div class=" d-flex justify-content-between align-items-center p-3 h-100" >
+      <span class="ms-1 question_count">1 of 5 Questions</span>
+      <button class="next_button"><span>NEXT</span></button>
+
+    </div>
+  </div>
+ </div>
+
+   
+
+  
+  
+
+ 
+ <button data-text="Awesome" class="button start_quiz_button " >
+  <span class="actual-text">&nbsp;START&nbsp;QUIZ&nbsp;</span>
+  <span class="hover-text" aria-hidden="true">&nbsp;START&nbsp;QUIZ&nbsp;</span>
+</button>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="quiz_data_obj.js"></script>
+   <script src="app.js"></script>
+</body>
+</html>
